@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@200;300;400&family=Noto+Sans+Thai+Looped:wght@200;300;400&family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+    /* font-family: 'Open Sans', sans-serif; */
+    background-color: #f7f7f7;
+    margin-bottom: 50px;
+}
+
+.LabelHead1{
+    margin-left: 10px;
+    font-family: 'Fjalla One', sans-serif;
+    color : #FFF;
+}
+
+.LabelHead2{
+    margin-left: 10px;
+    font-family: 'Fjalla One', sans-serif;
+    color : #f7a70d;
+}
+
+.NavbarHeader{
+    background-color: #303030;
+    padding: 15px;
+}
+
+.FooterBar{
+    background-color: #303030;
+    color : #FFF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.imgslides{
+    height: 300px;
+    width: 100%;
+}
+
+.imgslides_bar{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.LabelHeadsub{
+    color : #FFF;
+    text-align: right;
+    display: inline;
+    margin-left: 30px;
+    font-family: 'Fjalla One', sans-serif;
+    cursor: pointer;
+}
+
+.card{
+    border-radius: 2px;
+    height: 250px;
+    border-color: #FFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 11px 2px
+}
+
+.card-title{
+    font-family: 'Sarabun', sans-serif ;
+    font-weight: 300;
+}
+
+form{
+    font-family: 'Sarabun', sans-serif ;
+}
+
+form .form-group{
+    margin-bottom: 10px;
+}
+
+.btninform{
+    width: 110px;
+    margin-right: 10px;
+}
+
+.titleform{
+    padding-left: 16px;
+}
+
+.card-title{
+    padding-left: 16px;
+}
+
+#liveToast{
+    background-color: #FFF;
+    font-family: 'Sarabun', sans-serif ;
+}
+
+.card{
+    margin-top: 10px;
+    height: 310px;
+}
+
+.jobreject{
+    font-family: 'Sarabun', sans-serif ;
+    padding-top: 10px;
+    display: block;
+}
+
+.datecreate{
+    padding-left: 10px;
+    color: #3c3c3c;
+}
+
+.morelist{
+    font-family: 'Sarabun', sans-serif ;
+    float: right;
+    cursor: pointer;
+}
+
+.detailjob{
+    color: rgb(54, 54, 54);
+    text-decoration: blink;
+}
