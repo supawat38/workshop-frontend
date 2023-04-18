@@ -12,19 +12,26 @@
               รายการที่สนใจ
             </h5>
             <hr />
-            <p class="card-text">
-              <span class="jobreject" v-for="(items, key) in aItemJob">
-                <NuxtLink class="detailjob" :to="'/detailjob/' + items.id">
-                  <span>
-                    {{ key + 1 }}. {{ items.name }}
-                    (วันที่ :
-                    {{
-                      moment(items.created_at).format("DD/MM/YYYY HH:mm")
-                    }})</span
-                  >
-                </NuxtLink>
-              </span>
-            </p>
+            <div v-if="aItemJob == ''">
+              <p class="text-center">
+                <span class="jobreject">ไม่พบรายการ</span>
+              </p>
+            </div>
+            <div v-else>
+              <p class="card-text">
+                <span class="jobreject" v-for="(items, key) in aItemJob">
+                  <NuxtLink class="detailjob" :to="'/detailjob/' + items.id">
+                    <span>
+                      {{ key + 1 }}. {{ items.name }}
+                      (วันที่ :
+                      {{
+                        moment.utc(items.created_at).format("DD/MM/YYYY HH:mm")
+                      }})</span
+                    >
+                  </NuxtLink>
+                </span>
+              </p>
+            </div>
             <NuxtLink to="/list">
               <label class="morelist"> เพิ่มเติม </label>
             </NuxtLink>
@@ -42,19 +49,26 @@
               รายการที่เรียกสัมภาษณ์
             </h5>
             <hr />
-            <p class="card-text">
-              <span class="jobreject" v-for="(items, key) in aItemReaction">
-                <NuxtLink class="detailjob" :to="'/detailjob/' + items.id">
-                  <span>
-                    {{ key + 1 }}. {{ items.name }}
-                    (วันที่ :
-                    {{
-                      moment(items.created_at).format("DD/MM/YYYY HH:mm")
-                    }})</span
-                  >
-                </NuxtLink>
-              </span>
-            </p>
+            <div v-if="aItemReaction == ''">
+              <p class="text-center">
+                <span class="jobreject"> ไม่พบรายการ</span>
+              </p>
+            </div>
+            <div v-else>
+              <p class="card-text">
+                <span class="jobreject" v-for="(items, key) in aItemReaction">
+                  <NuxtLink class="detailjob" :to="'/detailjob/' + items.id">
+                    <span>
+                      {{ key + 1 }}. {{ items.name }}
+                      (วันที่ :
+                      {{
+                        moment(items.created_at).format("DD/MM/YYYY HH:mm")
+                      }})</span
+                    >
+                  </NuxtLink>
+                </span>
+              </p>
+            </div>
             <NuxtLink to="/list">
               <label class="morelist"> เพิ่มเติม </label>
             </NuxtLink>
@@ -72,19 +86,26 @@
               รายการที่ไม่ผ่านสัมภาษณ์
             </h5>
             <hr />
-            <p class="card-text">
-              <span class="jobreject" v-for="(items, key) in aItemReject">
-                <NuxtLink class="detailjob" :to="'/detailjob/' + items.id">
-                  <span>
-                    {{ key + 1 }}. {{ items.name }}
-                    (วันที่ :
-                    {{
-                      moment(items.created_at).format("DD/MM/YYYY HH:mm")
-                    }})</span
-                  >
-                </NuxtLink>
-              </span>
-            </p>
+            <div v-if="aItemReject == ''">
+              <p class="text-center">
+                <span class="jobreject">ไม่พบรายการ</span>
+              </p>
+            </div>
+            <div v-else>
+              <p class="card-text">
+                <span class="jobreject" v-for="(items, key) in aItemReject">
+                  <NuxtLink class="detailjob" :to="'/detailjob/' + items.id">
+                    <span>
+                      {{ key + 1 }}. {{ items.name }}
+                      (วันที่ :
+                      {{
+                        moment(items.created_at).format("DD/MM/YYYY hh:mm")
+                      }})</span
+                    >
+                  </NuxtLink>
+                </span>
+              </p>
+            </div>
             <NuxtLink to="/list">
               <label class="morelist"> เพิ่มเติม </label>
             </NuxtLink>
@@ -106,22 +127,24 @@ var aItemJob = [];
 var aItemReject = [];
 var aItemReaction = [];
 
-for (var i = 0; i < list.value.data.length; i++) {
-  //บริษัทที่ไม่ผ่าน
-  if (list.value.data[i].job_reject == true) {
-    aItemReject.push(list.value.data[i]);
-  }
+if (list.value.data != null) {
+  for (var i = 0; i < list.value.data.length; i++) {
+    //บริษัทที่ไม่ผ่าน
+    if (list.value.data[i].job_reject == true) {
+      aItemReject.push(list.value.data[i]);
+    }
 
-  //บริษัทที่รอเรียกสัมภาษณ์
-  if (list.value.data[i].job_reaction == true) {
-    aItemReaction.push(list.value.data[i]);
-  }
+    //บริษัทที่รอเรียกสัมภาษณ์
+    if (list.value.data[i].job_reaction == true) {
+      aItemReaction.push(list.value.data[i]);
+    }
 
-  //บริษัททั้งหมด (5 รายการ)
-  if (list.value.data[i].job_reject == false) {
-    //ต้องมีแค่ 5 รายการ
-    if (aItemJob.length < 4) {
-      aItemJob.push(list.value.data[i]);
+    //บริษัททั้งหมด (5 รายการ)
+    if (list.value.data[i].job_reject == false) {
+      //ต้องมีแค่ 5 รายการ
+      if (aItemJob.length < 4) {
+        aItemJob.push(list.value.data[i]);
+      }
     }
   }
 }

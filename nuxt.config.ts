@@ -21,4 +21,11 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         'nuxt-icon'
     ],
+    buildModules: [
+        '@nuxtjs/moment'
+      ],
+      moment: {
+        timezone: true
+      }
 })
+

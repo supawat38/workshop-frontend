@@ -8,18 +8,21 @@
         box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 11px 2px;
         border-radius: 2px;
         background-color: #fff;
-      ">
+      "
+    >
       <div class="col-lg-4 d-lg-block d-none" style="padding: 0px">
         <img
           class="card-img-top img-responsive"
           :src="useImage('/img7.jpg')"
-          style="height: 420px; width: 100%; object-fit: cover" />
+          style="height: 420px; width: 100%; object-fit: cover"
+        />
       </div>
       <div class="col-lg-4 d-sm-block d-lg-none" style="padding: 0px">
         <img
           class="card-img-top img-responsive"
           :src="useImage('/img7.jpg')"
-          style="height: 250px; width: 100%; object-fit: cover" />
+          style="height: 250px; width: 100%; object-fit: cover"
+        />
       </div>
       <div class="col-lg-8" style="margin-top: 20px">
         <form class="row">
@@ -29,13 +32,14 @@
               style="
                 border-left: 4px solid rgb(250, 168, 25);
                 margin-bottom: 20px;
-              ">
+              "
+            >
               รายละเอียด
             </h4>
           </div>
           <div class="col-6">
             <p style="text-align: right; margin-top: 5px">
-              {{ moment(item.created_at).format("DD/MM/YYYY HH:mm") }}
+              {{ moment.utc(item.created_at).format("DD/MM/YYYY HH:mm") }}
             </p>
           </div>
           <hr />

@@ -40,13 +40,12 @@
             <thead>
               <tr>
                 <th scope="col">ลำดับ</th>
-                <th scope="col">สถานะงาน</th>
+                <th scope="col">สถานะ</th>
                 <th scope="col">ชื่อบริษัท</th>
                 <th scope="col">ตำแหน่ง</th>
                 <th scope="col">URL</th>
-                <th scope="col">สถานที่ทำงาน</th>
-                <th scope="col">เงินเดือน</th>
-                <th scope="col">รูปแบบการทำงาน</th>
+                <th scope="col">สถานที่</th>
+                <th scope="col">รูปแบบ</th>
                 <th scope="col">วันที่สมัคร</th>
                 <th scope="col">แก้ไข / ลบ</th>
               </tr>
@@ -68,10 +67,11 @@
                   <td>{{ items.position ? items.position : "-" }}</td>
                   <td>{{ items.url ? items.url : "-" }}</td>
                   <td>{{ items.location ? items.location : "-" }}</td>
-                  <td>{{ items.salary ? items.salary : "-" }}</td>
                   <td>{{ showtexttypejob(items.type) }}</td>
                   <td>
-                    {{ moment(items.created_at).format("DD/MM/YYYY HH:mm") }}
+                    {{
+                      moment.utc(items.created_at).format("DD/MM/YYYY HH:mm")
+                    }}
                   </td>
                   <td>
                     <Icon
@@ -189,19 +189,18 @@ export default {
         });
 
         const content = await rawResponse.json();
-        console.log(content);
-        // if (content.code != 200) {
-        //   var msgwaring = content.msg.th;
-        //   this.AlertWaring(msgwaring);
-        // } else {
-        //   var msgwaring = "ลบช้อมูลสำเร็จ";
-        //   this.AlertWaring(msgwaring);
+        if (content.code != 200) {
+          var msgwaring = content.msg.th;
+          this.AlertWaring(msgwaring);
+        } else {
+          var msgwaring = "ลบช้อมูลสำเร็จ";
+          this.AlertWaring(msgwaring);
 
-        //   setTimeout(() => {
-        //     Object.assign(this.$data, this.$options.data.call());
-        //     this.msgwaring = "ลบช้อมูลสำเร็จ";
-        //   }, 1000);
-        // }
+          setTimeout(() => {
+            Object.assign(this.$data, this.$options.data.call());
+            this.msgwaring = "ลบช้อมูลสำเร็จ";
+          }, 1000);
+        }
       })();
     },
   },
