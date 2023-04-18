@@ -8,18 +8,21 @@
         box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 11px 2px;
         border-radius: 2px;
         background-color: #fff;
-      ">
+      "
+    >
       <div class="col-lg-4 d-lg-block d-none" style="padding: 0px">
         <img
           class="card-img-top img-responsive"
           :src="useImage('/img6.jpg')"
-          style="height: 630px; width: 100%; object-fit: cover" />
+          style="height: 630px; width: 100%; object-fit: cover"
+        />
       </div>
       <div class="col-lg-4 d-sm-block d-lg-none" style="padding: 0px">
         <img
           class="card-img-top img-responsive"
           :src="useImage('/img6.jpg')"
-          style="height: 250px; width: 100%; object-fit: cover" />
+          style="height: 250px; width: 100%; object-fit: cover"
+        />
       </div>
       <div class="col-lg-8" style="margin-top: 20px">
         <form class="fromCreateJob">
@@ -28,7 +31,8 @@
             style="
               border-left: 4px solid rgb(250, 168, 25);
               margin-bottom: 20px;
-            ">
+            "
+          >
             ระบุข้อมูล
           </h4>
           <hr />
@@ -41,7 +45,8 @@
               id="oetNameJob"
               v-model="oetNameJob"
               :class="invalidoetNameJob ? 'inputinvalid' : ''"
-              placeholder="กรุณาระบุชื่อบริษัท" />
+              placeholder="กรุณาระบุชื่อบริษัท"
+            />
           </div>
 
           <div class="form-group">
@@ -51,7 +56,8 @@
               class="form-control"
               id="oetPosition"
               v-model="oetPosition"
-              placeholder="กรุณาระบุตำแหน่ง" />
+              placeholder="กรุณาระบุตำแหน่ง"
+            />
           </div>
 
           <div class="form-group">
@@ -61,7 +67,8 @@
               class="form-control"
               id="oetURL"
               v-model="oetURL"
-              placeholder="กรุณาระบุ URL" />
+              placeholder="กรุณาระบุ URL"
+            />
           </div>
 
           <div class="form-group">
@@ -71,7 +78,8 @@
               class="form-control"
               id="oetLocation"
               v-model="oetLocation"
-              placeholder="กรุณาระบุสถานที่ทำงาน" />
+              placeholder="กรุณาระบุสถานที่ทำงาน"
+            />
           </div>
 
           <div class="form-group">
@@ -81,7 +89,8 @@
               class="form-control"
               id="oetSalary"
               v-model="oetSalary"
-              placeholder="กรุณาระบุเงินเดือน" />
+              placeholder="กรุณาระบุเงินเดือน"
+            />
           </div>
 
           <div class="form-group">
@@ -93,7 +102,8 @@
                 name="oetType"
                 v-model="oetType"
                 value="1"
-                checked />
+                checked
+              />
               <label class="form-check-label"> Work from home </label>
             </div>
 
@@ -103,7 +113,8 @@
                 type="radio"
                 name="oetType"
                 v-model="oetType"
-                value="2" />
+                value="2"
+              />
               <label class="form-check-label"> Hybrid </label>
             </div>
 
@@ -113,7 +124,8 @@
                 type="radio"
                 name="oetType"
                 v-model="oetType"
-                value="3" />
+                value="3"
+              />
               <label class="form-check-label"> Work at office </label>
             </div>
 
@@ -123,7 +135,8 @@
                 class="form-check-input"
                 name="oetApply"
                 v-model="oetApply"
-                id="oetApply" />
+                id="oetApply"
+              />
               <label class="form-check-label">สมัครแล้ว</label>
             </div>
           </div>
@@ -135,11 +148,13 @@
               class="btn btn-light btninform"
               type="reset"
               @click="ResetForm()"
-              value="ล้างข้อมูล" />
+              value="ล้างข้อมูล"
+            />
             <input
               class="btn btn-primary btninform"
               @click="createJOB()"
-              value="ยืนยันข้อมูล" />
+              value="ยืนยันข้อมูล"
+            />
           </div>
         </form>
       </div>
@@ -153,14 +168,16 @@
         class="toast"
         role="alert"
         aria-live="assertive"
-        aria-atomic="true">
+        aria-atomic="true"
+      >
         <div class="toast-header">
           <strong class="me-auto">แจ้งเตือน</strong>
           <button
             type="button"
             class="btn-close"
             data-bs-dismiss="toast"
-            aria-label="Close"></button>
+            aria-label="Close"
+          ></button>
         </div>
         <div class="toast-body">{{ msgwaring }}</div>
       </div>
@@ -203,7 +220,7 @@ export default {
 
         (async () => {
           const rawResponse = await fetch(
-            "http://127.0.0.1:5000/api/v2/createjob",
+            "http://127.0.0.1:5100/api/v2/createjob",
             {
               method: "POST",
               headers: {

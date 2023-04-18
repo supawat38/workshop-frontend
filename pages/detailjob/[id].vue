@@ -61,7 +61,7 @@ const route = useRoute();
 const item = ref({});
 const id = route.params.id;
 var type, salary, location, url, position;
-fetch("http://127.0.0.1:5000/api/v2/detailjob/" + id)
+fetch("http://127.0.0.1:5100/api/v2/detailjob/" + id)
   .then((res) => res.json())
   .then((result) => {
     item.value = result.data;

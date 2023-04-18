@@ -17,10 +17,8 @@ export default defineNuxtConfig({
         '@/assets/css/default.css',
         "@/assets/css/createjob.scss"
     ],
-    buildModules : [
-        '@nuxtjs/moment',
-    ],
     modules: [
         '@pinia/nuxt',
+        'nuxt-icon'
     ],
 })

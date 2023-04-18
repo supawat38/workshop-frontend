@@ -119,3 +119,50 @@ form .form-group{
     color: rgb(54, 54, 54);
     text-decoration: blink;
 }
+
+.detailjob:hover{
+    color: #236fea
+}
+
+.iconedit{
+    text-align: center;
+    display: block;
+    margin-left: 20%;
+    cursor: pointer;
+}
+
+.spanclosemodal{
+    cursor: pointer;
+}
+
+.h5closemodal{
+    font-family: 'Sarabun', sans-serif ;
+}
+
+.btnclosemodal{
+    font-family: 'Sarabun', sans-serif ;
+    font-size: 12px;
+}
+
+.BoxReject{
+    border : 1px solid rgb(216, 216, 216);
+    padding: 20px;
+    margin: 3px;
+}
+
+.iconwait{
+    width:1em;
+    height:1em;
+    color:#757575;
+}
+
+.iconreject{
+    width:1em;
+    height:1em;
+    color:#FF5252;
+}
+
+.icondelete{
+    margin-top: 1px;
+    cursor: pointer;
+}
